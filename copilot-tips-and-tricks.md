@@ -1,185 +1,189 @@
-# 🚀 Hướng dẫn sử dụng GitHub Copilot hiệu quả
+# 🚀 Effective GitHub Copilot Usage Guide
 
-## 📝 1. Tips & Tricks Cơ bản
+## 📝 1. Basic Tips & Tricks
 
-### 🎯 Cách viết prompt hiệu quả
+### 🎯 How to write effective prompts
 
-#### ✅ **Cụ thể và rõ ràng**
+#### ✅ **Be specific and clear**
 ```markdown
-❌ Tồi: "Tạo một function"
-✅ Tốt: "Tạo function JavaScript tính tổng của một mảng số nguyên, có xử lý lỗi cho input không hợp lệ"
+❌ Bad: "Create a function"
+✅ Good: "Create a Python function to calculate the sum of integers in a list, with error handling for invalid input"
 ```
 
-#### ✅ **Cung cấp ngữ cảnh**
+#### ✅ **Provide context**
 ```markdown
-❌ Tồi: "Fix bug này"
-✅ Tốt: "Trong React component UserProfile, fix lỗi state không update khi props thay đổi. Hiện tại đang dùng useState nhưng cần useEffect để sync với props"
+❌ Bad: "Fix this bug"
+✅ Good: "In FastAPI endpoint /users/{user_id}, fix the bug where SQLAlchemy session doesn't close properly after database operations, causing connection leaks"
 ```
 
-#### ✅ **Sử dụng từ khóa chuyên môn**
+#### ✅ **Use technical keywords**
 ```markdown
-✅ "Implement repository pattern với TypeScript và MongoDB"
-✅ "Create REST API endpoint với Express.js, validation middleware và error handling"
-✅ "Setup CI/CD pipeline với GitHub Actions cho Node.js app"
+✅ "Implement repository pattern with FastAPI and SQLAlchemy"
+✅ "Create REST API endpoint with FastAPI, Pydantic validation and async error handling"
+✅ "Setup CI/CD pipeline with GitHub Actions for FastAPI application"
 ```
 
-### 🔥 Các câu lệnh mạnh mẽ
+### 🔥 Powerful commands
 
-#### **Phân tích và Debug**
+#### **Analysis and Debug**
 ```markdown
-# Phân tích mã
-"Phân tích function này và chỉ ra các vấn đề về performance, security và maintainability"
+# Code analysis
+"Analyze this FastAPI endpoint and identify performance, security, and maintainability issues"
 
-# Review code
-"Code review đoạn này theo best practices, point out code smells và suggest improvements"
+# Code review
+"Code review this FastAPI service following best practices, point out code smells and suggest improvements"
 
 # Debug
-"Debug lỗi này: [mô tả lỗi]. Kiểm tra logic, data flow và edge cases"
+"Debug this error: [error description]. Check logic, data flow, and edge cases in this async FastAPI function"
 ```
 
-#### **Refactoring và Optimization**
+#### **Refactoring and Optimization**
 ```markdown
 # Refactor
-"Refactor đoạn code này để improve readability, reduce complexity và follow SOLID principles"
+"Refactor this FastAPI code to improve readability, reduce complexity and follow SOLID principles"
 
 # Performance
-"Optimize performance của function này, focus vào time complexity và memory usage"
+"Optimize performance of this FastAPI endpoint, focus on async operations and database query efficiency"
 
 # Clean code
-"Apply clean code principles: meaningful names, single responsibility, proper abstraction"
+"Apply clean code principles to this FastAPI service: meaningful names, single responsibility, proper abstraction"
 ```
 
-#### **Documentation và Testing**
+#### **Documentation and Testing**
 ```markdown
 # Documentation
-"Tạo comprehensive documentation cho API này bao gồm: endpoint specs, request/response examples, error codes"
+"Create comprehensive FastAPI documentation including: endpoint specs, Pydantic schemas, request/response examples, error codes"
 
 # Testing
-"Viết unit tests với Jest cho function này, cover happy path, edge cases và error scenarios"
+"Write pytest tests for this FastAPI endpoint, cover happy path, edge cases and error scenarios with async test client"
 
 # Type safety
-"Add TypeScript types cho module này, ensure type safety và improve developer experience"
+"Add proper type hints and Pydantic models for this FastAPI module, ensure type safety and improve developer experience"
 ```
 
-## 🎪 2. Techniques Nâng cao
+## 🎪 2. Advanced Techniques
 
 ### 📋 **Template-based Prompting**
 ```markdown
-# Template cho tạo component
-"Tạo [Framework] component có tên [ComponentName] với:
-- Props: [list props]
-- State: [list state]
-- Features: [list features]
-- Styling: [CSS/Tailwind/styled-components]
-- Tests: [testing framework]"
+# Template for FastAPI endpoint
+"Create FastAPI endpoint named [EndpointName] with:
+- Path: [endpoint path]
+- Method: [HTTP method]
+- Pydantic models: [request/response schemas]
+- Dependencies: [auth, database]
+- Error handling: [specific errors]
+- Database operations: [CRUD operations]"
 
-# Template cho API design
-"Design REST API cho [domain] với:
+# Template for API design
+"Design FastAPI service for [domain] with:
 - Entity: [entity name]
 - CRUD operations: [specific operations]
-- Authentication: [auth method]
-- Validation: [validation rules]
-- Database: [database type]"
+- Authentication: [JWT/OAuth2/API Key]
+- Validation: [Pydantic validation rules]
+- Database: [PostgreSQL/MongoDB/SQLite]
+- Async operations: [background tasks]"
 ```
 
 ### 🔄 **Iterative Refinement**
 ```markdown
-1. "Tạo basic version của [feature]"
-2. "Enhance với [specific improvement]"
-3. "Add error handling và edge cases"
-4. "Optimize performance và add caching"
-5. "Add comprehensive tests và documentation"
+1. "Create basic FastAPI endpoint for [feature]"
+2. "Enhance with [specific improvement] and async operations"
+3. "Add error handling, logging and edge cases"
+4. "Optimize performance with caching and database indexing"
+5. "Add comprehensive pytest tests and OpenAPI documentation"
 ```
 
 ### 🎭 **Role-based Prompting**
 ```markdown
 # Senior Developer
-"Với vai trò senior developer, review architecture này và suggest scalability improvements"
+"As a senior Python developer, review this FastAPI architecture and suggest scalability improvements"
 
 # Security Expert
-"Với góc nhìn security expert, audit code này và point out vulnerabilities"
+"From a security expert perspective, audit this FastAPI authentication system and point out vulnerabilities"
 
 # DevOps Engineer
-"Với vai trò DevOps engineer, design deployment strategy cho application này"
+"As a DevOps engineer, design deployment strategy for this FastAPI application with Docker and Kubernetes"
 ```
 
-## 💡 3. Best Practices cho Different Scenarios
+## 💡 3. Best Practices for Different Scenarios
 
 ### 🐛 **Debugging & Troubleshooting**
 ```markdown
 # Structured debugging
-"Debug issue này theo systematic approach:
-1. Reproduce bug với specific steps
-2. Analyze logs và error messages
-3. Identify root cause
-4. Propose solution với risk assessment
-5. Test fix thoroughly"
+"Debug this FastAPI issue using systematic approach:
+1. Reproduce bug with specific request examples
+2. Analyze FastAPI logs and error traceback
+3. Identify root cause in async operations or database queries
+4. Propose solution with risk assessment
+5. Test fix with pytest and manual testing"
 
 # Performance investigation
-"Investigate performance issue:
-- Profile application với tools
-- Identify bottlenecks
-- Measure current metrics
-- Implement optimizations
-- Validate improvements"
+"Investigate FastAPI performance issue:
+- Profile application with cProfile and FastAPI middleware
+- Identify bottlenecks in async operations and database queries
+- Measure current response times and throughput
+- Implement optimizations (caching, connection pooling, async operations)
+- Validate improvements with load testing"
 ```
 
-### 🏗️ **Architecture & Design**
+### � **Architecture & Design**
 ```markdown
 # System design
-"Design scalable system cho [use case]:
+"Design scalable FastAPI system for [use case]:
 - Requirements analysis
-- Component architecture
-- Data flow design
-- Technology stack selection
-- Scalability considerations
-- Security measures"
+- Microservices architecture with FastAPI
+- Data flow design with async operations
+- Technology stack (PostgreSQL, Redis, Celery)
+- Scalability considerations (load balancing, caching)
+- Security measures (JWT, rate limiting, CORS)"
 
 # Database design
-"Design database schema cho [domain]:
-- Entity relationships
-- Normalization strategy
-- Indexing plan
-- Query optimization
-- Data migration strategy"
+"Design database schema for FastAPI application [domain]:
+- SQLAlchemy model relationships
+- Alembic migration strategy
+- Database indexing plan for FastAPI queries
+- Query optimization with async SQLAlchemy
+- Connection pooling strategy"
 ```
 
 ### 🚀 **Feature Development**
 ```markdown
-# End-to-end feature
-"Implement complete feature [feature name]:
+# End-to-end FastAPI feature
+"Implement complete FastAPI feature [feature name]:
 1. Requirements breakdown
-2. API design
-3. Frontend components
-4. Backend services
-5. Database changes
-6. Testing strategy
-7. Documentation
-8. Deployment plan"
+2. Pydantic models and schemas design
+3. FastAPI endpoints with proper HTTP methods
+4. SQLAlchemy database operations
+5. Authentication and authorization
+6. Async background tasks with Celery
+7. Pytest testing strategy
+8. OpenAPI documentation
+9. Docker containerization
+10. Deployment with Uvicorn/Gunicorn"
 ```
 
 ## 🎯 4. Context Management Tips
 
 ### 📂 **File Context**
-- Mở files liên quan trước khi prompt
-- Sử dụng `@workspace` để reference toàn bộ project
-- Dùng `#file:filename` để reference specific file
+- Open related files before prompting
+- Use `@workspace` to reference entire project
+- Use `#file:filename` to reference specific file
 
 ### 🔍 **Code Selection**
-- Select đoạn code cần focus trước khi prompt
-- Sử dụng multi-file selection cho related changes
-- Comment inline để clarify intention
+- Select code section that needs focus before prompting
+- Use multi-file selection for related changes
+- Add inline comments to clarify intention
 
 ### 💬 **Conversation Flow**
 ```markdown
-# Khởi tạo context
-"Tôi đang làm việc với [project type] sử dụng [tech stack]. Main goal là [objective]."
+# Initialize context
+"I'm working on a [project type] using [tech stack]. Main goal is [objective]."
 
 # Maintain context
-"Continuing từ previous solution, now I need to [next step]"
+"Continuing from previous solution, now I need to [next step]"
 
 # Context switching
-"Switching context: Now working on [new area] của project"
+"Switching context: Now working on [new area] of the project"
 ```
 
 ## 🔧 5. Power Commands
@@ -210,60 +214,91 @@
 
 ### 📊 **Analysis**
 ```markdown
+## 🔧 5. Power Commands
+
+### 🎨 **Code Generation**
+```markdown
+# Full stack FastAPI feature
+"/generate complete FastAPI CRUD for User management with JWT authentication"
+
+# Boilerplate
+"/scaffold FastAPI project with SQLAlchemy, Alembic migrations, and pytest setup"
+
+# Integration
+"/integrate third-party API [API name] with FastAPI, including async HTTP client and retry logic"
+```
+
+### 🔄 **Refactoring**
+```markdown
+# Large scale refactoring
+"/refactor FastAPI codebase to use dependency injection pattern with dependency_overrides"
+
+# Migration
+"/migrate from Flask to FastAPI with async operations and Pydantic models"
+
+# Modernization
+"/update legacy Python code to use modern async/await patterns and type hints"
+```
+
+### 📉 **Analysis**
+```markdown
 # Code quality
-"/analyze code quality và provide actionable improvements"
+"/analyze FastAPI code quality and provide actionable improvements"
 
 # Security audit
-"/security audit toàn bộ authentication flow"
+"/security audit for FastAPI authentication flow with JWT and OAuth2"
 
 # Performance review
-"/performance analysis với specific bottleneck identification"
+"/performance analysis of FastAPI endpoints with specific bottleneck identification"
+```
 ```
 
 ## 🎪 6. Advanced Techniques
 
 ### 🎭 **Multi-step Planning**
 ```markdown
-# Complex task breakdown
-"Break down task [complex task] thành actionable steps:
-1. Analysis phase
-2. Design phase
-3. Implementation phase
-4. Testing phase
-5. Documentation phase
-6. Deployment phase"
+# Complex FastAPI task breakdown
+"Break down task [complex task] into actionable steps:
+1. Analysis phase - Requirements and API design
+2. Design phase - Database schema and Pydantic models
+3. Implementation phase - FastAPI endpoints and business logic
+4. Testing phase - Pytest with async test client
+5. Documentation phase - OpenAPI specs and README
+6. Deployment phase - Docker containerization and CI/CD"
 ```
 
 ### 🔄 **Incremental Development**
 ```markdown
-# Phase-based development
-"Phase 1: Create basic [feature] với minimal functionality"
-"Phase 2: Add [enhancement] với proper error handling"
-"Phase 3: Optimize performance và add caching"
-"Phase 4: Add comprehensive testing và monitoring"
+# Phase-based FastAPI development
+"Phase 1: Create basic FastAPI [feature] with minimal functionality"
+"Phase 2: Add [enhancement] with proper async error handling and logging"
+"Phase 3: Optimize performance with caching and database connection pooling"
+"Phase 4: Add comprehensive pytest testing and monitoring with Prometheus"
 ```
 
 ### 🎯 **Quality Gates**
 ```markdown
-# Built-in quality checks
+# Built-in quality checks for FastAPI
 "Implement [feature] ensuring:
-✅ Code follows project conventions
-✅ Proper error handling
-✅ Unit tests coverage > 80%
-✅ Performance benchmarks met
-✅ Security best practices
-✅ Documentation updated"
+✅ Code follows FastAPI and Python conventions (PEP 8, type hints)
+✅ Proper async error handling with HTTPException
+✅ Pytest coverage > 80% including async tests
+✅ Performance benchmarks met (response time < 200ms)
+✅ Security best practices (input validation, SQL injection prevention)
+✅ OpenAPI documentation updated automatically"
 ```
 
 ---
 
 ## 🏆 Pro Tips
 
-1. **Luôn cung cấp context**: Tech stack, project structure, constraints
-2. **Specific hơn generic**: "Fix React useState hook" > "Fix bug"
-3. **Sử dụng examples**: Provide input/output examples khi có thể
+1. **Always provide context**: Tech stack, project structure, constraints
+2. **Specific over generic**: "Fix FastAPI async session handling" > "Fix bug"
+3. **Use examples**: Provide input/output examples when possible
 4. **Iterative refinement**: Build up complexity gradually
 5. **Quality first**: Always ask for error handling, tests, documentation
-6. **Learn from responses**: Analyze và improve prompts based on results
+6. **Learn from responses**: Analyze and improve prompts based on results
+7. **FastAPI-specific**: Leverage async/await, Pydantic models, dependency injection
+8. **Performance focus**: Consider database queries, caching, and async operations
 
-**Remember**: Copilot là AI assistant, không phải magic wand. Quality input = Quality output! 🎯
+**Remember**: Copilot is an AI assistant, not a magic wand. Quality input = Quality output! 🎯
